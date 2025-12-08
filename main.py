@@ -30,7 +30,28 @@ class Graf:
         labels = nx.get_edge_attributes(self.graph, 'weight')
         nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=labels)
         plt.show()
+        
+    def get_degrees(self):
+        return dict(self.graph.degree())
+    
+    def has_cycle(self):
+        try:
+            nx.find_cycle(self.graph)
+            return True
+        except nx.NetworkXNoCycle:
+            return False
 
+    def is_connected(self):
+        return nx.is_connected(self.graph)
+    
+    def get_cycle_info(self):
+        if self.has_cycle():
+            try:
+                cycle = nx.find_cycle(self.graph)
+                return cycle
+            except nx.NetworkXNoCycle:
+                return None
+        return None
 G = Graf()
 
 # Nodes
@@ -68,3 +89,15 @@ print(G.shortest_path(1, 5))
 # nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
 # plt.show()
 G.visualize_shortest_path(1, 5)
+
+degrees = G.get_degrees()
+print(f"\nSemua derajat : {degrees}")
+
+print(f"\nApakah graf memiliki siklus? {G.has_cycle()}")
+print(f"Apakah graf terhubung? {G.is_connected()}")
+
+cycle = G.get_cycle_info()
+if cycle:
+    print(f"Siklus ditemukan: {cycle}")
+else:
+    print("Tidak ada siklus dalam graf")
