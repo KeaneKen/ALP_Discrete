@@ -6,10 +6,29 @@ Projek ini merupakan bentuk implementasi teori graf dalam Python. Beberapa opera
 ## Class Methods
 
 ### `__init__`
-[Description]
+Sebagai inisialisasi untuk sebuah variabel menjadi objek *networkX* agar bisa diproses sebagai graf.
+```
+graph = Graf()
+```
 
 ### `add_node`
-[Description]
+Digunakan untuk menambah sebuah *node*, atau titik, atau simpul dalam sebuah Graf. Semua simpul **harus dalam tipe data yang sama** agar berkeja.
+```
+G = Graf()
+
+# Nodes
+G.add_node(1)
+G.add_node(2)   
+G.add_node(3)   
+
+
+graph = Graf()
+
+# Nodes - use strings for node names
+graph.add_node('A')
+graph.add_node('B')   
+graph.add_node('C')
+```
 
 ### `add_nodes_from`
 [Description]
