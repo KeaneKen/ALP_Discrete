@@ -1,7 +1,5 @@
-import networkx as nx
-import matplotlib.pyplot as plt
-
-graph = nx.Graph()
+from Graf import Graf
+graph = Graf()
 
 # Nodes - use strings for node names
 graph.add_node('A')
@@ -21,23 +19,23 @@ graph.add_edge('E', 'F')
 graph.add_edge('C', 'F')
 
 # Visualisasi
-pos = nx.spring_layout(graph)
-nx.draw(graph, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=16)
-labels = nx.get_edge_attributes(graph, 'weight')
-nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
-plt.show()
-
-# Jalur Terpendek
-shortest = nx.shortest_path(graph, source='A', target='F')
-print(f"Shortest path from A to F: {shortest}")
-
-# Visualisasi jalur terpendek
-edges_in_path = [(shortest[i], shortest[i+1]) for i in range(len(shortest)-1)]
-nx.draw(graph, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=16)
-nx.draw_networkx_edges(graph, pos, edgelist=edges_in_path, edge_color='red', width=3)
-nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
-plt.show()
+# pos = nx.spring_layout(graph)
+# nx.draw(graph, pos, with_labels=True, node_color='lightblue', node_size=500, font_size=16)
+# labels = nx.get_edge_attributes(graph, 'weight')
+# nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
+# plt.show()
+# graph.visualize_graph()
 
 # Derajat setiap simpul
-degrees = dict(graph.degree())
-print(f"\nSemua derajat: {degrees}")
+degrees = graph.get_degrees()
+print(f"\nDerajat setiap simpul: {degrees}")
+
+# Cek siklus
+print(f"\nApakah graf memiliki siklus? {graph.has_cycle()}")
+
+# Cek konektivitas
+print(f"Apakah graf terhubung? {graph.is_connected()}")
+
+# Informasi siklus
+cycle = graph.get_cycle_info()
+print(f"Siklus dalam graf: {cycle if cycle else 'Tidak ada siklus'}")
