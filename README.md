@@ -16,7 +16,7 @@ Digunakan untuk menambah sebuah *node*, atau titik, atau simpul dalam sebuah Gra
 ```
 G = Graf()
 
-# Nodes
+# Nodes angka
 G.add_node(1)
 G.add_node(2)   
 G.add_node(3)   
@@ -24,14 +24,21 @@ G.add_node(3)
 
 graph = Graf()
 
-# Nodes - use strings for node names
+# Nodes huruf
 graph.add_node('A')
 graph.add_node('B')   
 graph.add_node('C')
 ```
 
 ### `add_nodes_from`
-[Description]
+Sama seperti *method* sebelumnya, tetapi jika mau menyimpan semua simpulnya dalam sebuah list terdahulu. *Method* ini akan menambah semua simpul dari list
+```
+graph = Graf()
+
+# Vertices
+vertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+graph.add_nodes_from(vertices)
+```
 
 ### `add_edge`
 [Description]
@@ -69,8 +76,6 @@ graph.add_node('C')
 ### `dijkstra_distances`
 [Description]
 
-## Cara penggunaan
-[Add usage examples here]
 
 ## Installation
 [Add installation instructions here]
