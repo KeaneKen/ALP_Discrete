@@ -24,7 +24,7 @@ graph.add_edge('C', 'F')
 # labels = nx.get_edge_attributes(graph, 'weight')
 # nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
 # plt.show()
-# graph.visualize_graph()
+graph.visualize_graph()
 
 # Derajat setiap simpul
 degrees = graph.get_degrees()

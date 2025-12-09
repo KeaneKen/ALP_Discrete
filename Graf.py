@@ -1,5 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+from collections import deque
 
 class Graf:
     def __init__(self):
@@ -7,6 +8,9 @@ class Graf:
 
     def add_node(self, node):
         return self.graph.add_node(node)
+    
+    def add_nodes_from(self, nodeList):
+        return self.graph.add_nodes_from(nodeList)
 
     def add_edge(self, origin, dest, weight=None):
         if weight is None:
@@ -23,6 +27,9 @@ class Graf:
 
     def shortest_path(self, source, target):
         return nx.shortest_path(self.graph, source, target, weight='weight')
+    
+    def shortest_distance(self, source, target):
+        return nx.shortest_path_length(self.graph, source, target, weight='weight')
     
     def visualize_shortest_path(self, source, target):
         pos = nx.spring_layout(self.graph)
@@ -55,3 +62,38 @@ class Graf:
             except nx.NetworkXNoCycle:
                 return None
         return None
+    
+    def bfs(self, start):
+        visited = []
+        queue = deque([start])
+        visited_set = {start}
+        
+        while queue:
+            vertex = queue.popleft()
+            visited.append(vertex)
+            
+            # Get neighbors and sort alphabetically
+            neighbors = sorted(self.graph.neighbors(vertex))
+            for neighbor in neighbors:
+                if neighbor not in visited_set:
+                    visited_set.add(neighbor)
+                    queue.append(neighbor)
+        
+        return visited
+    
+    def dfs(self, start, visited=None):
+        if visited is None:
+            visited = []
+        
+        visited.append(start)
+        
+        # Get neighbors and sort alphabetically
+        neighbors = sorted(self.graph.neighbors(start))
+        for neighbor in neighbors:
+            if neighbor not in visited:
+                self.dfs(neighbor, visited)
+        
+        return visited
+    
+    def dijkstra_distances(self, source):
+        return nx.single_source_dijkstra_path_length(self.graph, source, weight='weight')

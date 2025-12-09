@@ -38,14 +38,14 @@ print(G.shortest_path(1, 5))
 # plt.show()
 G.visualize_shortest_path(1, 5)
 
-degrees = G.get_degrees()
-print(f"\nSemua derajat : {degrees}")
+# degrees = G.get_degrees()
+# print(f"\nSemua derajat : {degrees}")
 
-print(f"\nApakah graf memiliki siklus? {G.has_cycle()}")
-print(f"Apakah graf terhubung? {G.is_connected()}")
+# print(f"\nApakah graf memiliki siklus? {G.has_cycle()}")
+# print(f"Apakah graf terhubung? {G.is_connected()}")
 
-cycle = G.get_cycle_info()
-if cycle:
-    print(f"Siklus ditemukan: {cycle}")
-else:
-    print("Tidak ada siklus dalam graf")
+# cycle = G.get_cycle_info()
+# if cycle:
+#     print(f"Siklus ditemukan: {cycle}")
+# else:
+#     print("Tidak ada siklus dalam graf")
