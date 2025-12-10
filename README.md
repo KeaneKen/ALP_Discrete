@@ -66,10 +66,16 @@ G.visualize_graph()
 ```
 
 ### `shortest_path`
-[Description]
+Digunakan untuk menentukan path terpendek dari satu titik ke titik tujuan yang ditentukan di parameter yang ditentukan
+```
+G.shortest_path(1, 5)
+```
 
 ### `shortest_distance`
-[Description]
+Digunakan untuk menentukan jarak path terpendek dari satu titik ke titik tujuan yang ditentukan di parameter yang ditentukan. Jarak ditentukan dengan menentukan path terpendek, lalu menjumlahkan bobot dari setiap *edge* atau garis
+```
+G.shortest_distance(1, 5)
+```
 
 ### `visualize_shortest_path`
 [Description]
