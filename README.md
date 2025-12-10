@@ -1,4 +1,4 @@
-# ALP Matemarika Diskrit - Teori Graf
+ # ALP Matemarika Diskrit - Teori Graf
 
 ## Overview
 Projek ini merupakan bentuk implementasi teori graf dalam Python. Beberapa operasi dari teori tersebut telah diubah menjadi *methods* yang siapa digunakan untuk melakukan beberapa operasi dalam teori graf. Semua *method* ini digabung dalam sebuah class `Graf` yang pada dasarnya menggunakan library lain, yaitu *etworkX*, *matplotlib.pyplot*, dan *deque*.
@@ -78,22 +78,22 @@ G.shortest_distance(1, 5)
 ```
 
 ### `visualize_shortest_path`
-[Description]
+Sama seperti *method* visualize_graph() dengan tambahan penanda jalur mana yang paling terpendek dari titik awal ke titik tujuan.
 
 ### `get_degrees`
-[Description]
+Untuk mengambil setiap dejarat dari setiap titik ada di dalam graf.
 
 ### `has_cycle`
-[Description]
+Untuk menentukan jika graf memiliki putaran/*loop* atau tidak. Akan mengreturn nilai Boolean (True/False).
 
 ### `is_connected`
-[Description]
+Untuk menentukan jika setiap titik pada graf saling terhubung atau tidak. Akan mengreturn nilai Boolean (True/False).
 
 ### `get_cycle_info`
-[Description]
+Untuk menentukan satu jalur yang merupakan putaran/*loop* di dalam sebuah graf.
 
 ### `bfs`
-[Description]
+Untuk melakukan perjalanan 
 
 ### `dfs`
 [Description]
