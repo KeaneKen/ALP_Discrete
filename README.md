@@ -12,7 +12,7 @@ graph = Graf()
 ```
 
 ### `add_node`
-Digunakan untuk menambah sebuah *node*, atau titik, atau simpul dalam sebuah Graf. Semua simpul **harus dalam tipe data yang sama** agar berkeja.
+Digunakan untuk menambah sebuah *node*, atau titik, atau simpul dalam sebuah Graf. Semua simpul **harus dalam tipe data yang sama** agar berkeja. Menggunakan *method* bawaan dari *networkX*.
 ```
 G = Graf()
 
@@ -31,7 +31,7 @@ graph.add_node('C')
 ```
 
 ### `add_nodes_from`
-Sama seperti *method* sebelumnya, tetapi jika mau menyimpan semua simpulnya dalam sebuah list terdahulu. *Method* ini akan menambah semua simpul dari list
+Sama seperti *method* sebelumnya, tetapi jika mau menyimpan semua simpulnya dalam sebuah list terdahulu. *Method* ini akan menambah semua simpul dari list. Menggunakan *method* bawaan dari *networkX*.
 ```
 graph = Graf()
 
@@ -41,10 +41,29 @@ graph.add_nodes_from(vertices)
 ```
 
 ### `add_edge`
-[Description]
+Untuk menambahkan sebuah hubungan antara dua simpul. Memiliki dua parameter, yaitu titik awal sampai titik tujuan. Bisa menambahkan bobot/jarak antar dua titik tersebut.
+```
+#.... Existing code....
+
+graph.add_edge('A', 'B')
+graph.add_edge('A', 'C')
+graph.add_edge('B', 'D')
+
+#.....
+
+G.add_edge(1, 2, weight=4.5)
+G.add_edge(1, 3, weight=3.2)
+G.add_edge(2, 4, weight=2.7)
+```
 
 ### `visualize_graph`
-[Description]
+Menggambarkan graf yang sudah dibuat. Memakai beberapa *method* dari library *networkX* dan *Matplotlib*, lebih tepatnya `nx.draw()` dan `plot.show()`
+```
+G = Graf()
+#.... Existing code....
+
+G.visualize_graph()
+```
 
 ### `shortest_path`
 [Description]
@@ -78,7 +97,11 @@ graph.add_nodes_from(vertices)
 
 
 ## Installation
-[Add installation instructions here]
+Jalankan command ini di terminal jika belum mempunyai library networkX, Matplotlib, atau keduanya.
+```
+pip install networkx
+pip install matplotlib
+```
 
 ## Anggota Kelompok
 1. Andi Tubagus Faatih Keane (0806022410015)
