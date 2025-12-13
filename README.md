@@ -142,11 +142,11 @@ pip install matplotlib
 ```
 
 ## Hasil Penyelesaian AFL-3
-![Graf Soal 1](documentationImg\AFL3-q1Graph.png "Graf Soal 1")
-![Hasil penyelesaian soal 1 di terminal](documentationImg\AFL3-q1Results.png "Hasil penyelesaian soal 1 di terminal")
-![Graf Soal 3](documentationImg\AFL3-q3Graph.png "Graf Soal 1")
-![Graf Soal 3 dengan jalur terpendek dari A ke G](documentationImg\AFL3-q3GraphHighlighted.png "Graf Soal 1")
-![Hasil penyelesaian soal 3 di terminal](documentationImg\AFL3-q3Results.png "Graf Soal 1")
+![Graf Soal 1](documentationImg/AFL3-q1Graph.png "Graf Soal 1")
+![Hasil penyelesaian soal 1 di terminal](documentationImg/AFL3-q1Results.png "Hasil penyelesaian soal 1 di terminal")
+![Graf Soal 3](documentationImg/AFL3-q3Graph.png "Graf Soal 1")
+![Graf Soal 3 dengan jalur terpendek dari A ke G](documentationImg/AFL3-q3GraphHighlighted.png "Graf Soal 1")
+![Hasil penyelesaian soal 3 di terminal](documentationImg/AFL3-q3Results.png "Graf Soal 1")
 
 ## Anggota Kelompok
 1. Andi Tubagus Faatih Keane (0806022410015)
