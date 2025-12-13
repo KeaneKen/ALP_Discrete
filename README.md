@@ -79,27 +79,60 @@ G.shortest_distance(1, 5)
 
 ### `visualize_shortest_path`
 Sama seperti *method* visualize_graph() dengan tambahan penanda jalur mana yang paling terpendek dari titik awal ke titik tujuan.
+```
+G.visualize_shortest_path(1, 5)
+```
 
 ### `get_degrees`
 Untuk mengambil setiap dejarat dari setiap titik ada di dalam graf.
+```
+degrees = graph.get_degrees()
+print(f"\nDerajat setiap simpul: {degrees}")
+```
 
 ### `has_cycle`
 Untuk menentukan jika graf memiliki putaran/*loop* atau tidak. Akan mengreturn nilai Boolean (True/False).
+```
+print(f"\nApakah graf memiliki siklus? {graph.has_cycle()}")
+
+```
 
 ### `is_connected`
 Untuk menentukan jika setiap titik pada graf saling terhubung atau tidak. Akan mengreturn nilai Boolean (True/False).
+```
+print(f"Apakah graf terhubung? {graph.is_connected()}")
+```
 
 ### `get_cycle_info`
-Untuk menentukan satu jalur yang merupakan putaran/*loop* di dalam sebuah graf.
+Untuk menentukan satu jalur yang merupakan putaran/*loop* di dalam sebuah graf. Menggunakan method *.find_cycle* dari library networkX.
+```
+cycle = graph.get_cycle_info()
+print(f"Siklus dalam graf: {cycle if cycle else 'Tidak ada siklus'}")
+```
 
 ### `bfs`
-Untuk melakukan perjalanan 
+Untuk melakukan perjalanan di setiap simpul dalam graf secara melebar. Menggunakan library *deque* untuk menyimpan antrian simpul yang mau dikunjungi. Parameter yang dibutuhkan yaitu titik mulai perjalanan.
+```
+bfs_result = graph.bfs('A')
+print(f"Urutan kunjungan BFS: {' -> '.join(bfs_result)}")
+```
 
 ### `dfs`
-[Description]
+Untuk melakukan perjalanan di setiap simpul dalam graf secara mendalam. Menggunakan struktur data tumpukan (stack) atau dilakukan secara rekursif.
+```
+dfs_result = graph.dfs('A')
+print(f"Urutan kunjungan DFS: {' -> '.join(dfs_result)}")
+
+```
 
 ### `dijkstra_distances`
-[Description]
+Metode untuk mencari jalur terpendek (shortest path) dari satu titik awal ke semua titik lain dalam sebuah graf berbobot (weighted graph). Langsung menggunakan method *nx.single_source_dijkstra_path_length* dari library networkX
+```
+distances = graph.dijkstra_distances('A')
+print("\n1. Jarak minimum dari A ke seluruh simpul:")
+for vertex in sorted(distances.keys()):
+    print(f"   A -> {vertex}: {distances[vertex]}")
+```
 
 
 ## Installation
